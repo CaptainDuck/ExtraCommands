@@ -1,2 +1,40 @@
-----
-....
+---
+#ExtraCommands Config
+
+#/website
+wmsg1: "Hello! Our website is domain.net."
+wmsg2: "If you want to see more links, do /links"
+
+#/ranks
+rank1: "Donator"
+rank2: "VIP"
+rank3: "VIP+"
+rank4: "Dynamic"
+rank5: "Dynamic+"
+rank6: "Professional"
+rank1price: "$5.00"
+rank2price: "$10.00"
+rank3price: "$15.00"
+rank4price: "$20.00"
+rank5price: "$25.00"
+rank6price: "$30.00"
+
+#/shop
+shopmsg1: "Hello! You could buy CHEAP ranks at shop.domain.net."
+shopmsg2: "If you want to see the prices of the ranks directly from here, do /ranks"
+
+#/links
+linksmsg1: "Website: domain.net or /website"
+linkmsg2: "Shop and Buy Ranks at shop.enderend.net or /shop"
+
+#/rules
+rule1: "Dont use any mods or hacks."
+rule2: "No cussing, be kind."
+rule3: "Be respectful to anu staff and others."
+rule4: "Inappropriate usernames are discouraged.."
+rulemsg: "If you find anyone that aren't following the rules, report it to a Admin :D."
+
+#/server
+srvrmsg: "Hello! You're playing on Server!"
+
+...
