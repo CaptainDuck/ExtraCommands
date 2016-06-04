@@ -1,1 +1,21 @@
-
+name: ExtraCommands
+main: ExtraCommands\Main
+version: 0.1
+api: 2.0.0
+commands:
+ website:
+  description: "Check the website!"
+  usage: "/website"
+  permission: ec.website
+ ranks:
+  description: "Check the price of the ranks!"
+  usage: "/ranks"
+  permission: "ec.ranks"
+ shop:
+  description: "Check the link of where to buy ranks!"
+  usage: "/shop"
+  permission: "ec.shop"
+ links:
+  description: "Check all of the links of the server!"
+  usage: "/links"
+  permission: "ec.shop"
