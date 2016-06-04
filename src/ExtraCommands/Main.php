@@ -7,9 +7,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
 use pocketmine\permission\Permission;
 use pocketmine\event\Listener;
-use pocketmine\event\player\PlayerChatEvent;
-use pocketmine\Server;
-use pocketmine\Player;
+use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
 
 class Main extends PluginBase implements Listener{
@@ -18,7 +16,9 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info("ExtraCommands by CaptainDuck enabled!");
         $this->saveDefaultConfig();
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
-        $this->getServer()->getPluginManager()->registerEvents($this,$this);
+        $this->saveResource("Config.yml");
+        $config = new Config($this->getDataFolder() . "Config.yml", Config::YAML);
+        $config->save();
     }
     public function onDisable(){
         $this->getLogger()->info("ExtraCommands by CaptainDuck disaled! :o");
