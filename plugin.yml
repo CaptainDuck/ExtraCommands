@@ -19,3 +19,11 @@ commands:
   description: "Check all of the links of the server!"
   usage: "/links"
   permission: "ec.shop"
+ server:
+  description: "Gives information on what server you're at!"
+  usage: "/server"
+  permission: "ec.server"
+ rules:
+  description: "Check the rules of the server!"
+  usage: "/rules"
+  permission: "ec.rules"
