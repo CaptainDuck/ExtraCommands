@@ -1,11 +1,11 @@
 ---
 #ExtraCommands Config
 
-#/website
+#Website Messages
 wmsg1: "Hello! Our website is domain.net."
 wmsg2: "If you want to see more links, do /links"
 
-#/ranks
+#Ranks configuration
 rank1: "Donator"
 rank2: "VIP"
 rank3: "VIP+"
@@ -19,22 +19,22 @@ rank4price: "$20.00"
 rank5price: "$25.00"
 rank6price: "$30.00"
 
-#/shop
+#Shop Messages
 shopmsg1: "Hello! You could buy CHEAP ranks at shop.domain.net."
 shopmsg2: "If you want to see the prices of the ranks directly from here, do /ranks"
 
-#/links
+#Links configuration
 linksmsg1: "Website: domain.net or /website"
 linkmsg2: "Shop and Buy Ranks at shop.enderend.net or /shop"
 
-#/rules
+#Rules configuration
 rule1: "Dont use any mods or hacks."
 rule2: "No cussing, be kind."
 rule3: "Be respectful to anu staff and others."
 rule4: "Inappropriate usernames are discouraged.."
 rulemsg: "If you find anyone that aren't following the rules, report it to a Admin :D."
 
-#/server
+#Server configuration
 srvrmsg: "Hello! You're playing on Server!"
 
 ...
