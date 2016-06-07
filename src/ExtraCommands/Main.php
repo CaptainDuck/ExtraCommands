@@ -72,7 +72,8 @@ class Main extends PluginBase implements Listener{
                 }
             case "server":
                 if($sender->hasPermisssion("ec.server")){
-                    $sender->sendMessage(C::GRAY. $this->getConfig()->get("srvrmsg"));
+                    $sender->sendMessage(C::GRAY. $this->getConfig()->get("srvrmsg1"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("srvrmsg2"));
                     return true;
                     break;
                 }
