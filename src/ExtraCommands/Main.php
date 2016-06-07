@@ -16,7 +16,7 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info("ExtraCommands by CaptainDuck enabled!");
         $this->saveDefaultConfig();
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
-        $this->saveResource("Config.yml");
+        $this->saveResource("config.yml");
     }
     public function onDisable(){
         $this->getLogger()->info("ExtraCommands by CaptainDuck disaled! :o");
