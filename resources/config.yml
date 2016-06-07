@@ -36,5 +36,6 @@ rulemsg: "If you find anyone that aren't following the rules, report it to a Adm
 
 #Server configuration
 srvrmsg: "Hello! You're playing on Server!"
+srvrmsg2: "Find more at our website! domain.net"
 
 ...
