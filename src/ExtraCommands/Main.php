@@ -29,7 +29,7 @@ class Main extends PluginBase implements Listener{
             case "website":
                 if($sender->hasPermission("ec.website")){
                     $sender->sendMessage(C::BLUE. $this->getConfig()->get("wmsg1"));
-                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("wmsg1"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("wmsg2"));
                     return true;
                     break;
                 }
