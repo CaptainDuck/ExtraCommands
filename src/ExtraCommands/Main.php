@@ -36,11 +36,11 @@ class Main extends PluginBase implements Listener{
             case "ranks":
                 if($sender->hasPermission("ec.ranks")){
                     $sender->sendMessage(C::RED.">Ranks<");
-                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank1"). ">" . $this->getConfig()->get("rank1price"));
-                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank2"). ">". $this->getConfig()->get("rank2price"));
-                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank3"). ">". $this->getConfig()->get("rank3price"));
-                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank4"). ">". $this->getConfig()->get("rank4price"));
-                    $sender->sendMessage(C::RED. $this->getConfig()->get("rank5"). ">". $this->getConfig()->get("rank5price"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank1"). " > " . $this->getConfig()->get("rank1price"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank2"). " > ". $this->getConfig()->get("rank2price"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank3"). " > ". $this->getConfig()->get("rank3price"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank4"). " > ". $this->getConfig()->get("rank4price"));
+                    $sender->sendMessage(C::RED. $this->getConfig()->get("rank5"). " > ". $this->getConfig()->get("rank5price"));
                     return true;
                     break;
                 }
@@ -73,6 +73,8 @@ class Main extends PluginBase implements Listener{
             case "server":
                 if($sender->hasPermisssion("ec.server")){
                     $sender->sendMessage(C::GRAY. $this->getConfig()->get("srvrmsg"));
+                    return true;
+                    break;
                 }
             }
     }
