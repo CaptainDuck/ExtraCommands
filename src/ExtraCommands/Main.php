@@ -26,7 +26,6 @@ class Main extends PluginBase implements Listener{
     }
     public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
         switch($cmd->getName()){
-          if($sender instanceof Player){
             case "website":
                 if($sender->hasPermission("ec.website")){
                     $sender->sendMessage(C::BLUE. $this->getConfig()->get("wmsg1"));
@@ -72,13 +71,14 @@ class Main extends PluginBase implements Listener{
                     break;
                 }
             case "server":
-                if($sender->hasPermisssion("ec.server")){
-                    $sender->sendMessage(C::GRAY. $this->getConfig()->get("srvrmsg1"));
-                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("srvrmsg2"));
-                    return true;
-                    break;
+                if($sender instanceof Player){
+                    if($sender->hasPermisssion("ec.server")){
+                        $sender->sendMessage(C::GRAY. $this->getConfig()->get("srvrmsg1"));
+                        $sender->sendMessage(C::BLUE. $this->getConfig()->get("srvrmsg2"));
+                        return true;
+                        break;
+                    }
                 }
-          }
         }
     }
 }
