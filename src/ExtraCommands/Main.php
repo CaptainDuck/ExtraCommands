@@ -26,6 +26,7 @@ class Main extends PluginBase implements Listener{
     }
     public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
         switch($cmd->getName()){
+          if($sender instanceof Player){
             case "website":
                 if($sender->hasPermission("ec.website")){
                     $sender->sendMessage(C::BLUE. $this->getConfig()->get("wmsg1"));
@@ -77,6 +78,7 @@ class Main extends PluginBase implements Listener{
                     return true;
                     break;
                 }
-            }
+          }
+        }
     }
 }
