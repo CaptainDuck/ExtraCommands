@@ -34,8 +34,8 @@ rule3: "Be respectful to anu staff and others."
 rule4: "Inappropriate usernames are discouraged.."
 rulemsg: "If you find anyone that aren't following the rules, report it to a Admin :D."
 
-#Server configuration
-srvrmsg: "Hello! You're playing on Server!"
-srvrmsg2: "Find more at our website! domain.net"
+#Server Info configuration
+ServerIP: "play.domaing.net"
+ServerName: "Server!"
 
 ...
