@@ -5,6 +5,7 @@ namespace ExtraCommands;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
+use pocketmine\Server;
 use pocketmine\permission\Permission;
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
@@ -61,12 +62,21 @@ class Main extends PluginBase implements Listener{
                 }
             case "rules":
                 if($sender->hasPermission("ec.rules")){
-                    $sender->sendMessage(C::RED.">Rules<");
+                    $sender->sendMessage(C::RED."> Rules <");
                     $sender->sendMessage(C::GRAY."1. ". $this->getConfig()->get("rule1"));
                     $sender->sendMessage(C::GRAY."2. ". $this->getConfig()->get("rule2"));
                     $sender->sendMessage(C::GRAY."3. ". $this->getConfig()->get("rule3"));
                     $sender->sendMessage(C::GRAY."4. ". $this->getConfig()->get("rule4"));
                     $sender->sendMessage(C::BLUE."5. ". $this->getConfig()->get("rulemsg"));
+                    return true;
+                    break;
+                }
+            case "info":
+                if($sender->hasPermission("ec.info")){
+                    $sender->sendMessage(C::GRAY."Server Info");
+                    $sender->sendMessage(C::BLUE."Online:". count($this->players) . "/" . $this->getMaxPlayers());
+                    $sender->sendMessage(C::WHITE."Server IP: ". $this->getConfig()->get("ServerIP"));
+                    $sender->sendMessage(C::WHITE."You're playing on ". $this->getConfig()->get("ServerName"). "!");
                     return true;
                     break;
                 }
