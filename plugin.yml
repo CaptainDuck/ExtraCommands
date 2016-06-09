@@ -4,7 +4,7 @@ version: 0.1
 api: 2.0.0
 commands:
  website:
-  description: "Check the website!"
+  description: "Check the website of the server!"
   usage: "/website"
   permission: ec.website
  ranks:
@@ -19,10 +19,10 @@ commands:
   description: "Check all of the links of the server!"
   usage: "/links"
   permission: "ec.shop"
- server:
+ info:
   description: "Gives information on what server you're at!"
-  usage: "/server"
-  permission: "ec.server"
+  usage: "/info"
+  permission: "ec.info"
  rules:
   description: "Check the rules of the server!"
   usage: "/rules"
