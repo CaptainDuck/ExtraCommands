@@ -5,7 +5,6 @@ namespace ExtraCommands;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
-use pocketmine\Server;
 use pocketmine\permission\Permission;
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
