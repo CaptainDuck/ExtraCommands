@@ -7,7 +7,7 @@ Command|Information|Permission
 -------|-----------|-----------
 /website| Check the website of the server!| ec.website
         |
-/server| Gives information on what server you're at!| ec.server
+/info| Gives information on what server you're at! (Shows Online Status, IP, and Server Name (according to config)| ec.info
       |
 /links| Check all of the links of the server!| ec.links
       |
