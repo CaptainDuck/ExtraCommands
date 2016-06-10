@@ -73,7 +73,7 @@ class Main extends PluginBase implements Listener{
             case "info":
                 if($sender->hasPermission("ec.info")){
                     $sender->sendMessage(C::GRAY."Server Info");
-                    $sender->sendMessage(C::BLUE."Online:". count($this->getServer()->getOnlinePlayers() . "/" . $this->getServer()->getMaxPlayers()));
+                    $sender->sendMessage(C::BLUE."Online:". count($this->getServer()->getOnlinePlayers() . "/" . count($this->getServer()->getMaxPlayers()));
                     $sender->sendMessage(C::WHITE."Server IP: ". $this->getConfig()->get("ServerIP"));
                     $sender->sendMessage(C::WHITE."You're playing on ". $this->getConfig()->get("ServerName"). "!");  
                     return true;
