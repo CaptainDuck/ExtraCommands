@@ -35,7 +35,7 @@ rule4: "Inappropriate usernames are discouraged.."
 rulemsg: "If you find anyone that aren't following the rules, report it to a Admin :D."
 
 #Server Info configuration
-ServerIP: "play.domaing.net"
+ServerIP: "play.domain.net"
 ServerName: "Server!"
 
 ...
