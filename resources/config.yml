@@ -20,7 +20,7 @@ rank5price: "$25.00"
 rank6price: "$30.00"
 
 #Shop Messages
-shopmsg1: "Hello! You could buy CHEAP ranks at shop.domain.net."
+shopmsg1: "Hello! You can buy ranks at shop.domain.net."
 shopmsg2: "If you want to see the prices of the ranks directly from here, do /ranks"
 
 #Links configuration
@@ -28,11 +28,11 @@ linksmsg1: "Website: domain.net or /website"
 linksmsg2: "Shop and Buy Ranks at shop.enderend.net or /shop"
 
 #Rules configuration
-rule1: "Dont use any mods or hacks."
-rule2: "No cussing, be kind."
-rule3: "Be respectful to anu staff and others."
-rule4: "Inappropriate usernames are discouraged.."
-rulemsg: "If you find anyone that aren't following the rules, report it to a Admin :D."
+rule1: "Don't use any mods or hacks."
+rule2: "Don't cuss, be kind."
+rule3: "Be respectful to players and staff."
+rule4: "Inappropriate usernames are discouraged."
+rulemsg: "If anyone is not following the rules, report to an Admin :D"
 
 #Server Info configuration
 ServerIP: "play.domain.net"
