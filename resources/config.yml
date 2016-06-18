@@ -28,9 +28,9 @@ linksmsg1: "Website: domain.net or /website"
 linksmsg2: "Shop and Buy Ranks at shop.enderend.net or /shop"
 
 #Rules configuration
-rule1: "Don't use mods or hacks."
-rule2: "No cussing, be kind."
-rule3: "Be respectful to players and staffs"
+rule1: "Don't use any mods or hacks."
+rule2: "Don't cuss, be kind."
+rule3: "Be respectful to players and staff."
 rule4: "Inappropriate usernames are discouraged."
 rulemsg: "If anyone is not following the rules, report to an Admin :D"
 
