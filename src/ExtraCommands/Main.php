@@ -19,7 +19,7 @@ class Main extends PluginBase implements Listener{
         $this->saveResource("config.yml");
     }
     public function onDisable(){
-        $this->getLogger()->info("ExtraCommands by CaptainDuck disaled! :o");
+        $this->getLogger()->info("ExtraCommands by CaptainDuck disabled! :o");
     }
     public function onLoad(){
         $this->getLogger()->info("Loading ExtraCommands by CaptainDuck!");
