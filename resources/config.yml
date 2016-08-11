@@ -1,6 +1,21 @@
 ---
 #ExtraCommands Config
 
+#Version 1.1.0 Update!
+#What's New?
+#1. Broadcast! Broadcast a message on the whole server using /broadcast!
+#2. Variables!
+
+#Variables?
+#{X} -> X Position
+#{Y} -> Y Position
+#{Z} -> Z Position
+#{NAME} -> Your Name
+#{WORLD} -> World Name
+#{N} -> Next Line
+#{PLAYERS} -> Server's current player slots
+#{MAXPLAYERS} -> Server's max player slots
+
 #Website Messages
 wmsg1: "Hello! Our website is domain.net."
 wmsg2: "If you want to see more links, do /links"
@@ -35,6 +50,7 @@ rule4: "Inappropriate usernames are discouraged."
 rulemsg: "If anyone is not following the rules, report to an Admin :D"
 
 #Server Info configuration
+OnlineMSG: {PLAYERS}/{MAXPLAYERS}
 ServerIP: "play.domain.net"
 ServerName: "Server!"
 
