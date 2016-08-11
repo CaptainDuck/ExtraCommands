@@ -5,6 +5,8 @@ namespace ExtraCommands;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
+use pocketmine\Player;
+use pocketmine\Server;
 use pocketmine\permission\Permission;
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
@@ -23,6 +25,16 @@ class Main extends PluginBase implements Listener{
     }
     public function onLoad(){
         $this->getLogger()->info("Loading ExtraCommands by CaptainDuck!");
+    }
+    public function formatMessage($message, CommandSender $sender){
+        $message = str_replace("{X}", round($sender->getX()), $message);
+        $message = str_replace("{Y}", round($sender->getY()), $message);
+        $message = str_replace("{Z}", round($sender->getZ()), $message);
+        $message = str_replace("{NAME}", $sender->getName(), $message);
+        $message = str_replace("{WORLD}", $sender->getLevel()->getName(), $message);
+        $message = str_replace("{N}", "\n", $message);
+        $message = str_replace("{PLAYERS}", count($this->getServer()->getOnlinePlayers()), $message);
+        $message = str_replace("{MAXPLAYERS}", $this->getServer()->getMaxPlayers(), $message);
     }
     public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
         switch($cmd->getName()){
@@ -73,9 +85,16 @@ class Main extends PluginBase implements Listener{
             case "info":
                 if($sender->hasPermission("ec.info")){
                     $sender->sendMessage(C::GRAY."Server Info");
-                    $sender->sendMessage(C::BLUE."Online: ". count($this->getServer()->getOnlinePlayers()) . "/" . $this->getServer()->getMaxPlayers());
+                    $sender->sendMessage(C::BLUE."Online: ". $this->getConfig()->get("OnlineMessage"));
                     $sender->sendMessage(C::WHITE."Server IP: ". $this->getConfig()->get("ServerIP"));
                     $sender->sendMessage(C::WHITE."You're playing on ". $this->getConfig()->get("ServerName"). "!");  
+                    return true;
+                    break;
+                }
+            case "broadcast":
+                if($sender->hasPermission("ec.broadcast")){
+                    $msg = implode(" ", $args);
+                    $this->getServer()->broadcastMessage($msg);
                     return true;
                     break;
                 }
