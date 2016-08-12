@@ -49,11 +49,11 @@ class Main extends PluginBase implements Listener{
             case "ranks":
                 if($sender->hasPermission("ec.ranks")){
                     $sender->sendMessage(C::RED. $this->getConfig()->get("ranksmainmsg"),$message);
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("rank1"). " > " . $this->getConfig()->get("rank1price"),$message);
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("rank2"). " > ". $this->getConfig()->get("rank2price"),$message);
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("rank3"). " > ". $this->getConfig()->get("rank3price"),$message);
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("rank4"). " > ". $this->getConfig()->get("rank4price"),$message);
-                    $sender->sendMessage(C::RED. $prefix . $this->getConfig()->get("rank5"). " > ". $this->getConfig()->get("rank5price"),$message);
+                    $sender->sendMessage(C::BLUE. "1. ". $this->getConfig()->get("rank1"). " > " . $this->getConfig()->get("rank1price"),$message);
+                    $sender->sendMessage(C::BLUE. "2. ". $this->getConfig()->get("rank2"). " > ". $this->getConfig()->get("rank2price"),$message);
+                    $sender->sendMessage(C::BLUE. "3. ". $this->getConfig()->get("rank3"). " > ". $this->getConfig()->get("rank3price"),$message);
+                    $sender->sendMessage(C::BLUE. "4. ". $this->getConfig()->get("rank4"). " > ". $this->getConfig()->get("rank4price"),$message);
+                    $sender->sendMessage(C::RED. "5. ".  $this->getConfig()->get("rank5"). " > ". $this->getConfig()->get("rank5price"),$message);
                     return true;
                     break;
                 }
@@ -74,7 +74,7 @@ class Main extends PluginBase implements Listener{
                 }
             case "rules":
                 if($sender->hasPermission("ec.rules")){
-                    $sender->sendMessage(C::RED."> Rules <");
+                    $sender->sendMessage(C::RED. $this->getConfig()->get("rulesmainmsg"),$message);
                     $sender->sendMessage(C::GRAY. $prefix . "1. ". $this->getConfig()->get("rule1"),$message);
                     $sender->sendMessage(C::GRAY. $prefix . "2. ". $this->getConfig()->get("rule2"),$message);
                     $sender->sendMessage(C::GRAY. $prefix . "3. ". $this->getConfig()->get("rule3"),$message);
@@ -85,7 +85,7 @@ class Main extends PluginBase implements Listener{
                 }
             case "info":
                 if($sender->hasPermission("ec.info")){
-                    $sender->sendMessage(C::GRAY."Server Info");
+                    $sender->sendMessage(C::GRAY. $this->getConfig()->get("infomainmsg"),$message);
                     $sender->sendMessage(C::BLUE. $prefix . "Online: ". $this->getConfig()->get("onlinemsg"),$message);
                     $sender->sendMessage(C::WHITE. $prefix . "Server IP: ". $this->getConfig()->get("ServerIP"),$message);
                     $sender->sendMessage(C::WHITE. $prefix . "You're playing on ". $this->getConfig()->get("ServerName"),$message);  
