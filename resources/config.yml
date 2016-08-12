@@ -5,6 +5,7 @@
 #What's New?
 #1. Broadcast! Broadcast a message on the whole server using /broadcast! (No need for config)
 #2. Variables!
+#3. More beautiful commands with Prefixes on every command! (Except for /broadcast :3) But don't worry! No need to add prefixes on the messages.. It's automatically there! :P
 
 #Variables?
 #{X} -> X Position
@@ -16,11 +17,15 @@
 #{PLAYERS} -> Server's current player slots
 #{MAXPLAYERS} -> Server's max player slots
 
+#Prefix
+msgprefix: "Server -> "
+#Example: /website -> Server -> Hello! Our website is domain.net.
 #Website Messages
 wmsg1: "Hello! Our website is domain.net."
 wmsg2: "If you want to see more links, do /links"
 
 #Ranks configuration
+ranksmainmsg: "> > Ranks < <"
 rank1: "Donator"
 rank2: "VIP"
 rank3: "VIP+"
@@ -35,14 +40,17 @@ rank5price: "$25.00"
 rank6price: "$30.00"
 
 #Shop Messages
+shopmainmsg: "> > Shop < <"
 shopmsg1: "Hello! You can buy ranks at shop.domain.net."
 shopmsg2: "If you want to see the prices of the ranks directly from here, do /ranks"
 
 #Links configuration
+linksmainmsg: "> > Links < <"
 linksmsg1: "Website: domain.net or /website"
 linksmsg2: "Shop and Buy Ranks at shop.enderend.net or /shop"
 
 #Rules configuration
+rulesmainmsg: "> > Rules < <"
 rule1: "Don't use any mods or hacks."
 rule2: "Don't cuss, be kind."
 rule3: "Be respectful to players and staff."
@@ -50,7 +58,8 @@ rule4: "Inappropriate usernames are discouraged."
 rulemsg: "If anyone is not following the rules, report to an Admin :D"
 
 #Server Info configuration
-OnlineMSG: {PLAYERS}/{MAXPLAYERS}
+infomainmsg: "> > Ranks < <"
+onlinemsg: {PLAYERS}/{MAXPLAYERS}
 ServerIP: "play.domain.net"
 ServerName: "Server!"
 
