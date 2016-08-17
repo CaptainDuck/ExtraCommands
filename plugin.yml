@@ -1,12 +1,12 @@
-name: ExtraCommands
-main: ExtraCommands\Main
+name: "ExtraCommands"
+main: "ExtraCommands\Main"
 version: 1.1.0
-api: 2.0.0
+api: [2.0.0]
 commands:
  website:
   description: "Check the website of the server!"
   usage: "/website"
-  permission: ec.website
+  permission: "ec.website"
  ranks:
   description: "Check the price of the ranks!"
   usage: "/ranks"
