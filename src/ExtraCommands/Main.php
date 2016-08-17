@@ -10,6 +10,7 @@ use pocketmine\level\Level;
 use pocketmine\Server;
 use pocketmine\permission\Permission;
 use pocketmine\event\Listener;
+use pocketmine\math\Vector3;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
 
