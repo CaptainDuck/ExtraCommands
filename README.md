@@ -16,3 +16,7 @@ Command|Information|Permission
 /ranks| Check the price of the ranks! | ec.ranks
       |
 /shop| Check the link of where to buy ranks!| ec.shop
+
+#Download
+
+**[Download Link](https://sellfy.com/p/Zl4L/#)***
