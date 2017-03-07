@@ -28,21 +28,25 @@ class Main extends PluginBase implements Listener{
     public function onLoad(){
         $this->getLogger()->info("Loading ExtraCommands by CaptainDuck!");
     }
-    public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
-        
-        $message = str_replace("{X}", round($sender->getX()), $message);
-        $message = str_replace("{Y}", round($sender->getY()), $message);
-        $message = str_replace("{Z}", round($sender->getZ()), $message);
-        $message = str_replace("{NAME}", $sender->getName(), $message);
-        $message = str_replace("{WORLD}", $sender->getLevel()->getName(), $message);
+    
+    public function formatText(Player $player, $message){
+        $message = str_replace("{X}", round($player->getX()), $message);
+        $message = str_replace("{Y}", round($player->getY()), $message);
+        $message = str_replace("{Z}", round($player->getZ()), $message);
+        $message = str_replace("{NAME}", $player->getName(), $message);
+        $message = str_replace("{WORLD}", $player->getLevel()->getName(), $message);
         $message = str_replace("{N}", "\n", $message);
         $message = str_replace("{PLAYERS}", count($this->getServer()->getOnlinePlayers()), $message);
         $message = str_replace("{MAXPLAYERS}", $this->getServer()->getMaxPlayers(), $message);
+        return $message;
+    }
+       
+    public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
         $prefix = $this->getConfig()->get("msgprefix");
         switch($cmd->getName()){
             case "website":
                 if($sender->hasPermission("ec.website")){
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("wmsg1"),$message);
+                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("wmsg1"),$this->formatM);
                     $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("wmsg2"),$message);
                     return true;
                     break;
