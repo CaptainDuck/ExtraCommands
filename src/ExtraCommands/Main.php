@@ -46,7 +46,8 @@ class Main extends PluginBase implements Listener{
         switch($cmd->getName()){
             case "website":
                 if($sender->hasPermission("ec.website")){
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("wmsg1"),$this->formatM);
+                    $msg = $this->getConfig()->get("wmsg1");
+                    $sender->sendMessage($this->formatText($sender, $msg);
                     $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("wmsg2"),$message);
                     return true;
                     break;
