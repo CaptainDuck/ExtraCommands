@@ -1,19 +1,12 @@
 <?php
-
 namespace ExtraCommands;
-
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
-use pocketmine\Player;
-use pocketmine\level\Level;
-use pocketmine\Server;
 use pocketmine\permission\Permission;
 use pocketmine\event\Listener;
-use pocketmine\math\Vector3;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
-
 class Main extends PluginBase implements Listener{
     
     public function onEnable(){
@@ -28,80 +21,58 @@ class Main extends PluginBase implements Listener{
     public function onLoad(){
         $this->getLogger()->info("Loading ExtraCommands by CaptainDuck!");
     }
-    
-    public function formatText(Player $player, $message){
-        $message = str_replace("{X}", round($player->getX()), $message);
-        $message = str_replace("{Y}", round($player->getY()), $message);
-        $message = str_replace("{Z}", round($player->getZ()), $message);
-        $message = str_replace("{NAME}", $player->getName(), $message);
-        $message = str_replace("{WORLD}", $player->getLevel()->getName(), $message);
-        $message = str_replace("{N}", "\n", $message);
-        $message = str_replace("{PLAYERS}", count($this->getServer()->getOnlinePlayers()), $message);
-        $message = str_replace("{MAXPLAYERS}", $this->getServer()->getMaxPlayers(), $message);
-        return $message;
-    }
-       
     public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
-        $prefix = $this->getConfig()->get("msgprefix");
         switch($cmd->getName()){
             case "website":
                 if($sender->hasPermission("ec.website")){
-                    $msg = $this->getConfig()->get("wmsg1");
-                    $sender->sendMessage($this->formatText($sender, $msg);
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("wmsg2"),$message);
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("wmsg1"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("wmsg2"));
                     return true;
                     break;
                 }
             case "ranks":
                 if($sender->hasPermission("ec.ranks")){
-                    $sender->sendMessage(C::RED. $this->getConfig()->get("ranksmainmsg"),$message);
-                    $sender->sendMessage(C::BLUE. "1. ". $this->getConfig()->get("rank1"). " > " . $this->getConfig()->get("rank1price"),$message);
-                    $sender->sendMessage(C::BLUE. "2. ". $this->getConfig()->get("rank2"). " > ". $this->getConfig()->get("rank2price"),$message);
-                    $sender->sendMessage(C::BLUE. "3. ". $this->getConfig()->get("rank3"). " > ". $this->getConfig()->get("rank3price"),$message);
-                    $sender->sendMessage(C::BLUE. "4. ". $this->getConfig()->get("rank4"). " > ". $this->getConfig()->get("rank4price"),$message);
-                    $sender->sendMessage(C::RED. "5. ".  $this->getConfig()->get("rank5"). " > ". $this->getConfig()->get("rank5price"),$message);
+                    $sender->sendMessage(C::RED.">Ranks<");
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank1"). " > " . $this->getConfig()->get("rank1price"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank2"). " > ". $this->getConfig()->get("rank2price"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank3"). " > ". $this->getConfig()->get("rank3price"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("rank4"). " > ". $this->getConfig()->get("rank4price"));
+                    $sender->sendMessage(C::RED. $this->getConfig()->get("rank5"). " > ". $this->getConfig()->get("rank5price"));
                     return true;
                     break;
                 }
             case "shop":
                 if($sender->hasPermission("ec.shop")){
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("shopmsg1"),$message);
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("shopmsg2"),$message);
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("shopmsg1"));
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("shopmsg2"));
                     return true;
                     break;
                 }
             case "links":
                 if($sender->hasPermission("ec.links")){
-                    $sender->sendMessage(C::GRAY. $this->getConfig()->get("linksmainmsg"),$message);
-                    $sender->sendMessage(C::BLUE. $prefix . $this->getConfig()->get("linksmsg1"),$message);
-                    $sender->sendMessage(C::WHITE. $prefix . $this->getConfig()->get("linksmsg2"),$message);
+                    $sender->sendMessage(C::GRAY.">Links<");
+                    $sender->sendMessage(C::BLUE. $this->getConfig()->get("linksmsg1"));
+                    $sender->sendMessage(C::WHITE. $this->getConfig()->get("linksmsg2"));
                     return true;
                     break;
                 }
             case "rules":
                 if($sender->hasPermission("ec.rules")){
-                    $sender->sendMessage(C::RED. $this->getConfig()->get("rulesmainmsg"),$message);
-                    $sender->sendMessage(C::GRAY. $prefix . "1. ". $this->getConfig()->get("rule1"),$message);
-                    $sender->sendMessage(C::GRAY. $prefix . "2. ". $this->getConfig()->get("rule2"),$message);
-                    $sender->sendMessage(C::GRAY. $prefix . "3. ". $this->getConfig()->get("rule3"),$message);
-                    $sender->sendMessage(C::GRAY. $prefix . "4. ". $this->getConfig()->get("rule4"),$message);
-                    $sender->sendMessage(C::BLUE. $prefix . "5. ". $this->getConfig()->get("rulemsg"),$message);
+                    $sender->sendMessage(C::RED."> Rules <");
+                    $sender->sendMessage(C::GRAY."1. ". $this->getConfig()->get("rule1"));
+                    $sender->sendMessage(C::GRAY."2. ". $this->getConfig()->get("rule2"));
+                    $sender->sendMessage(C::GRAY."3. ". $this->getConfig()->get("rule3"));
+                    $sender->sendMessage(C::GRAY."4. ". $this->getConfig()->get("rule4"));
+                    $sender->sendMessage(C::BLUE."5. ". $this->getConfig()->get("rulemsg"));
                     return true;
                     break;
                 }
             case "info":
                 if($sender->hasPermission("ec.info")){
-                    $sender->sendMessage(C::GRAY. $this->getConfig()->get("infomainmsg"),$message);
-                    $sender->sendMessage(C::BLUE. $prefix . "Online: ". $this->getConfig()->get("onlinemsg"),$message);
-                    $sender->sendMessage(C::WHITE. $prefix . "Server IP: ". $this->getConfig()->get("ServerIP"),$message);
-                    $sender->sendMessage(C::WHITE. $prefix . "You're playing on ". $this->getConfig()->get("ServerName"),$message);  
-                    return true;
-                    break;
-                }
-            case "broadcast":
-                if($sender->hasPermission("ec.broadcast")){
-                    $msg = implode(" ", $args);
-                    $this->getServer()->broadcastMessage($msg, $message);
+                    $sender->sendMessage(C::GRAY."Server Info");
+                    $sender->sendMessage(C::BLUE."Online: ". count($this->getServer()->getOnlinePlayers()) . "/" . $this->getServer()->getMaxPlayers());
+                    $sender->sendMessage(C::WHITE."Server IP: ". $this->getConfig()->get("ServerIP"));
+                    $sender->sendMessage(C::WHITE."You're playing on ". $this->getConfig()->get("ServerName"). "!");  
                     return true;
                     break;
                 }
