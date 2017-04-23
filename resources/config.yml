@@ -1,22 +1,6 @@
 ---
 #ExtraCommands Config
 
-#Version 1.1.0 Update!
-#What's New?
-#1. Broadcast! Broadcast a message on the whole server using /broadcast! (No need for config)
-#2. Variables!
-#3. More beautiful commands with Prefixes on every command! (Except for /broadcast :3) But don't worry! No need to add prefixes on the messages.. It's automatically there! :P
-
-#Variables?
-#{X} -> X Position
-#{Y} -> Y Position
-#{Z} -> Z Position
-#{NAME} -> Your Name
-#{WORLD} -> World Name
-#{N} -> Next Line
-#{PLAYERS} -> Server's current player slots
-#{MAXPLAYERS} -> Server's max player slots
-
 #Prefix
 msgprefix: "Server -> "
 #Example: /website -> Server -> Hello! Our website is domain.net.
