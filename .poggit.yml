@@ -1,6 +1,6 @@
 --- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/CaptainDuck/ExtraCommands
 branches:
-- master
+- stable
 projects:
   ExtraCommands:
     path: ""
