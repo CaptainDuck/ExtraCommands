@@ -13,4 +13,7 @@ Command|Information|Permission
 /shop| Check the link of where to buy ranks!| ec.shop
 
 
-**[Download Link](https://sellfy.com/p/Zl4L/#)**
+**[Download Link]()**
+
+
+**Liked the plugin so much you want to donate? Well, that can be sort out! Just visit [This Page!](https://paypal.me/eedonate/3USD)**
