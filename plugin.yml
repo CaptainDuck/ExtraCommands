@@ -18,7 +18,7 @@ commands:
  links:
   description: "Check all of the links of the server!"
   usage: "/links"
-  permission: "ec.shop"
+  permission: "ec.links"
  info:
   description: "Gives information on what server you're at!"
   usage: "/info"
